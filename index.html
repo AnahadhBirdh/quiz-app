@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ============ QUIZ VIEW ============ -->
+    <section id="quiz-view" class="view">
+
+      <div class="quiz-topbar">
+        <span class="question-count" id="question-count">Question 1 of 10</span>
+        <span class="score-badge" id="score-badge">Score: 0</span>
+        <div class="timer-ring" id="timer-ring">
+          <span class="timer-text" id="timer-text">15s</span>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="question-card">
+        <span class="category-pill" id="category-pill"></span>
+        <h2 class="question-text" id="question-text"></h2>
+
+        <ul class="options-list" id="options-list">
+          <!-- option <li> elements injected by JS -->
+        </ul>
+
+        <div class="feedback-banner hidden" id="feedback-banner"></div>
+      </div>
+
+      <div class="quiz-footer">
+        <button class="btn btn-primary" id="next-btn" disabled>Next</button>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS VIEW ============ -->
+    <section id="results-view" class="view hidden">
+      <div class="results-card">
+        <div class="results-icon" aria-hidden="true">📚</div>
+        <h2 id="results-heading">Keep Learning!</h2>
+        <p id="results-subtext">Review the topics and try again.</p>
+
+        <div class="score-ring" id="score-ring">
+          <span class="score-ring-inner" id="score-fraction">0 / 10</span>
+        </div>
+        <p id="score-percent">0%</p>
+
+        <div class="stats-grid">
+          <div class="stat-card stat-correct">
+            <span id="stat-correct">0</span>
+            <span class="stat-label">Correct</span>
+          </div>
+          <div class="stat-card stat-wrong">
+            <span id="stat-wrong">0</span>
+            <span class="stat-label">Wrong</span>
+          </div>
+          <div class="stat-card stat-skipped">
+            <span id="stat-skipped">0</span>
+            <span class="stat-label">Skipped</span>
+          </div>
+        </div>
+
+        <div class="results-actions">
+          <button class="btn btn-primary" id="play-again-btn">Play Again</button>
+          <button class="btn btn-outline" id="review-btn">Review Answers</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEW VIEW ============ -->
+    <section id="review-view" class="view hidden">
+      <div class="review-header">
+        <button class="btn btn-outline" id="back-btn">&larr; Back to Results</button>
+        <h2>Answer Review</h2>
+      </div>
+      <div class="review-list" id="review-list">
+        <!-- review item cards injected by JS -->
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
